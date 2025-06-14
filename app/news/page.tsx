@@ -100,28 +100,70 @@ export default function NewsPage() {
   // New state for bookmark loading
   const [bookmarkLoading, setBookmarkLoading] = useState<number | null>(null);
 
+  // Cache storage for news articles
+  const newsCache = useRef<{
+    [key: string]: {
+      data: any[];
+      timestamp: number;
+    };
+  }>({});
+  
+  // Cache duration in milliseconds (5 minutes)
+  const CACHE_DURATION = 5 * 60 * 1000;
+
   useEffect(() => {
     setIsLoading(true);
     setError(null);
     
     const fetchNews = async () => {
       try {
-        const response = await fetch(
-          `https://newsapi.org/v2/top-headlines?country=us&category=${activeCategory}&apiKey=${process.env.NEXT_PUBLIC_NEWS_API_KEY}`
-        );
+        // Check cache first
+        const cacheKey = activeCategory.toLowerCase();
+        const cachedData = newsCache.current[cacheKey];
         
+        if (cachedData && (Date.now() - cachedData.timestamp) < CACHE_DURATION) {
+          setArticles(cachedData.data);
+          setFilteredArticles(cachedData.data);
+          setIsLoading(false);
+          return;
+        }
+
+        if (!process.env.NEXT_PUBLIC_NEWS_API_KEY) {
+          throw new Error('News API key is not configured');
+        }
+        
+        const response = await fetch(
+          `https://gnews.io/api/v4/top-headlines?category=${activeCategory.toLowerCase()}&lang=en&country=us&apikey=${process.env.NEXT_PUBLIC_NEWS_API_KEY}`
+        );
+
         if (!response.ok) {
-          throw new Error(`Failed to fetch news: ${response.status}`);
+          const errorMessage = response.status === 429 
+            ? 'Daily API request limit reached. Please try again tomorrow.' 
+            : `Failed to fetch news: ${response.status}`;
+          throw new Error(errorMessage);
         }
 
         const data = await response.json();
         
-        if (data.status === 'error') {
-          throw new Error(data.message || 'API returned an error');
+        if (!data.articles) {
+          throw new Error('No articles found in the response');
         }
         
-        setArticles(data.articles || []);
-        setFilteredArticles(data.articles || []);
+        const formattedArticles = data.articles.map((article: any) => ({
+          ...article,
+          urlToImage: article.image,
+          publishedAt: article.publishedAt,
+          source: { name: article.source.name }
+        }));
+
+        // Update cache
+        newsCache.current[cacheKey] = {
+          data: formattedArticles,
+          timestamp: Date.now()
+        };
+        
+        setArticles(formattedArticles);
+        setFilteredArticles(formattedArticles);
       } catch (error) {
         console.error("Error fetching news:", error);
         setError(error instanceof Error ? error.message : 'An unknown error occurred');
