@@ -299,7 +299,7 @@ function WeatherWidget() {
           {forecastToday && (
             <div className="mt-4 bg-white/40 dark:bg-black/10 rounded-full h-1.5 overflow-hidden">
               <div 
-                className="h-full bg-gradient-to-r from-blue-500 to-orange-500" 
+                className="h-full bg-gradient-to-r from-teal-500 to-orange-500 transition-all duration-300" 
                 style={{ 
                   width: `${Math.round(((weather.current.temp_c - forecastToday.mintemp_c) / (forecastToday.maxtemp_c - forecastToday.mintemp_c)) * 100)}%` 
                 }} 
@@ -508,9 +508,9 @@ const MapComponent = () => {
     return (
       <Alert className="mb-4">
         <MapIcon className="h-4 w-4" />
-        <AlertTitle>Map Unavailable</AlertTitle>
+        <AlertTitle>Map Unavailable - API not working</AlertTitle>
         <AlertDescription>
-          Google Maps functionality is currently unavailable. Please check back later.
+          Google Maps functionality is currently unavailable. Will use API later
         </AlertDescription>
       </Alert>
     );
@@ -608,7 +608,7 @@ export default function Home() {
               onClick={navigateToNews}
             >
               Get Started
-              <ArrowRightIcon className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              <ArrowRightIcon className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1.5" />
             </Button>
           </div>
         </motion.div>
@@ -619,13 +619,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center mb-8">
             <div className="text-center md:text-left">
-              <Badge className="mb-4 px-3 py-1 text-sm font-medium bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-400">
+              <Badge className="mb-4 px-3 py-1 text-sm font-medium bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-400 hover:bg-red-200 dark:hover:bg-red-800 cursor-default">
                 Top Stories
               </Badge>
-              <h2 className="text-3xl font-bold">Today's Headlines</h2>
+              <h2 className="text-3xl font-bold ">Today's Headlines</h2>
             </div>
             <Button
-              variant="ghost"
+              variant="destructive"
               className="mt-4 md:mt-0"
               onClick={navigateToNews}
             >
@@ -690,7 +690,7 @@ export default function Home() {
           {/* Weather Widget - Now above features */}
           <div className="mb-12">
             <div className="text-center">
-              <Badge className="mb-4 px-3 py-1 text-sm font-medium bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400">
+              <Badge className="mb-4 px-3 py-1 text-sm font-medium bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400 hover:bg-green-200 dark:hover:bg-blue-800 cursor-default">
                 Local Weather
               </Badge>
               <h2 className="text-2xl font-semibold mb-4">Current Conditions</h2>
@@ -704,7 +704,7 @@ export default function Home() {
           {/* Traffic Map Widget */}
           <div className="mb-12">
             <div className="text-center">
-              <Badge className="mb-4 px-3 py-1 text-sm font-medium bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-400">
+              <Badge className="mb-4 px-3 py-1 text-sm font-medium bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-400 hover:bg-green-200 dark:hover:bg-green-800 cursor-default">
                 Live Traffic
               </Badge>
               <h2 className="text-2xl font-semibold mb-4">Traffic Around You</h2>
@@ -723,7 +723,7 @@ export default function Home() {
             variants={staggerContainer}
           >
             <div className="text-center mb-8">
-              <Badge className="mb-4 px-3 py-1 text-sm font-medium bg-secondary text-secondary-foreground">
+              <Badge className="mb-4 px-3 py-1 text-sm font-medium bg-secondary text-secondary-foreground hover:bg-green-200 dark:hover:bg-green-800 cursor-default">
                 Features
               </Badge>
               <h2 className="text-2xl font-semibold">Enhance Your News Experience</h2>
@@ -787,11 +787,11 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to get started?</h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join thousands of users who are already experiencing the future of news consumption.
+            Join us to stay updated.
           </p>
           <Button 
             size="lg" 
-            className="text-lg px-8 bg-primary hover:bg-primary/90 text-white flex items-center mx-auto group"
+            className="text-lg px-8 bg-primary hover:bg-primary/90 text-yellow-100 flex items-center mx-auto group"
             onClick={navigateToNews}
           >
             Browse News
@@ -804,12 +804,12 @@ export default function Home() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <Badge className="mb-4 px-3 py-1 text-sm font-medium bg-secondary text-secondary-foreground">
+            <Badge className="mb-4 px-3 py-1 text-sm font-medium bg-secondary text-secondary-foreground hover:bg-green-200 dark:hover:bg-green-800 cursor-default">
               About Us
             </Badge>
             <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              AI NEWS HUB leverages artificial intelligence to deliver personalized,
+              Newzy World leverages artificial intelligence to deliver personalized,
               concise news summaries while keeping you informed about what matters most.
               Our mission is to make news consumption more efficient and meaningful.
             </p>

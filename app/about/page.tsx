@@ -53,46 +53,28 @@ export default function AboutPage() {
   
   const teamMembers = [
     {
-      name: "Alex Johnson",
-      role: "Founder & CEO",
-      image: "https://randomuser.me/api/portraits/men/32.jpg",
-      bio: "Former tech journalist with over 15 years of experience in the industry."
+      name: "Himanshu",
+      role: "Developer",
+      image: "c:\Users\himan\OneDrive\Desktop\himanshu new.jpg",
+      bio: "A 3rd Year Student of Data Science at JCBOSE UST, YMCA, Faridabad."
     },
-    {
-      name: "Sarah Chen",
-      role: "Chief Technology Officer",
-      image: "https://randomuser.me/api/portraits/women/44.jpg",
-      bio: "AI researcher with a Ph.D. in Natural Language Processing from Stanford."
-    },
-    {
-      name: "Marcus Williams",
-      role: "Lead Developer",
-      image: "https://randomuser.me/api/portraits/men/75.jpg",
-      bio: "Full-stack developer specializing in React and Node.js ecosystems."
-    },
-    {
-      name: "Priya Patel",
-      role: "Content Director",
-      image: "https://randomuser.me/api/portraits/women/63.jpg",
-      bio: "Former editor at TechCrunch with expertise in content curation."
-    }
   ];
   
   const values = [
     {
-      title: "Accuracy",
-      description: "We're committed to delivering accurate, well-sourced news without bias.",
+      title: "Preciseness",
+      description: "I am committed to deliver accurate, well-sourced news.",
       icon: <Check className="h-6 w-6 text-blue-500" />
     },
     {
-      title: "Innovation",
-      description: "We leverage cutting-edge AI to provide a personalized news experience.",
+      title: "Briefness",
+      description: "I leverage AI to provide a personalized brief news experience.",
       icon: <Lightbulb className="h-6 w-6 text-yellow-500" />
     },
     {
       title: "Accessibility",
-      description: "We believe everyone should have access to quality information.",
-      icon: <Globe className="h-6 w-6 text-green-500" />
+      description: "I believe everyone should have access to quality information.",
+      icon: <Globe className="h-6 w-6 text-purple-500" />
     }
   ];
   
@@ -107,8 +89,7 @@ export default function AboutPage() {
         <Badge className="mb-4 px-3 py-1 bg-primary/10 text-primary border-primary/20">About Us</Badge>
         <h1 className="text-4xl font-bold mb-6">Our Mission and Vision</h1>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          AI News Hub is revolutionizing how people consume news by combining expert journalism with 
-          advanced artificial intelligence to deliver personalized, relevant, and unbiased news content.
+          "Newzy World is changing the way you read news by mixing AI with quality journalism to bring you news that actually matters to you.".
         </p>
       </motion.div>
       
@@ -119,23 +100,23 @@ export default function AboutPage() {
         animate="visible"
       >
         <motion.div variants={fadeIn} className="space-y-6">
-          <h2 className="text-3xl font-semibold">Our Story</h2>
+          <h2 className="text-3xl font-semibold">My Story</h2>
           <p className="text-muted-foreground">
-            Founded in 2023, AI News Hub emerged from a simple but powerful idea: what if we could harness 
+            Newzy World emerged from a simple but powerful idea: what if we could harness 
             the power of artificial intelligence to transform how people discover and engage with news?
           </p>
           <p className="text-muted-foreground">
-            Our team of journalists, data scientists, and developers came together with a shared vision 
-            of creating a news platform that breaks through information overload to deliver content that 
-            truly matters to each individual reader.
+            This is my Fifth Semester project, and it has been a journey of learning,
+            experimentation, and innovation. I started with a vision to create a platform that not only
+            delivers news but also enhances the reading experience through AI-driven personalization.
           </p>
           <p className="text-muted-foreground">
-            Today, we're proud to serve millions of readers worldwide, helping them stay informed with 
-            curated news that adapts to their interests while maintaining journalistic integrity and factual accuracy.
+            Today, I am proud to say that Newzy World is not just a news aggregator,
+            but a comprehensive news platform that combines cutting-edge AI technology with a commitment to quality journalism.
           </p>
           <div className="pt-4">
             <Button onClick={() => router.push('/contact')} className="group">
-              Get in touch
+              Connect with me
               <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </div>
@@ -144,7 +125,7 @@ export default function AboutPage() {
         <motion.div variants={fadeIn}>
           <div className="aspect-video rounded-lg overflow-hidden shadow-lg">
             <Image 
-              src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop" 
+              src="https://www.bankrate.com/2022/10/27135704/GettyImages-91630491.jpeg" 
               alt="Team brainstorming at AI News Hub" 
               width={800} 
               height={450} 
@@ -244,9 +225,9 @@ export default function AboutPage() {
               </div>
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <Image 
-                  src="https://images.unsplash.com/photo-1555255707-c07966088b7b?q=80&w=1000&auto=format&fit=crop" 
+                  src="https://www.aam-us.org/wp-content/uploads/2023/01/AdobeStock_378897598.jpeg?fit=5500,3667" 
                   alt="AI-powered news curation" 
-                  width={600} 
+                  width={500} 
                   height={400} 
                   className="w-full h-full object-cover"
                 />
@@ -257,7 +238,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="order-2 lg:order-1 rounded-lg overflow-hidden shadow-lg">
                 <Image 
-                  src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=1000&auto=format&fit=crop" 
+                  src="https://i0.wp.com/judithjohnsonphd.com/wp-content/uploads/2019/04/jaredd-craig-744902-unsplash-e1554719380319.jpg?fit=3960,2247&ssl=1" 
                   alt="Journalism excellence" 
                   width={600} 
                   height={400} 
@@ -346,10 +327,10 @@ export default function AboutPage() {
               </div>
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <Image 
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" 
+                  src="https://dinnova.io/wp-content/uploads/2024/07/Seamless-User-Experience-The-Secret-to-Your-Success.jpeg" 
                   alt="User experience design" 
                   width={600} 
-                  height={400} 
+                  height={250} 
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -392,17 +373,16 @@ export default function AboutPage() {
         animate="visible"
         variants={fadeIn}
       >
-        <h2 className="text-3xl font-semibold mb-6">Join Us on Our Journey</h2>
+        <h2 className="text-3xl font-semibold mb-6">Join me on My Journey</h2>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-          We're on a mission to transform the news industry. Whether you're a reader, partner, or potential team member,
-          we'd love to hear from you.
+          Let's explore news like never before.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button size="lg" onClick={() => router.push('/news')}>
+          <Button size="lg" variant="secondary" onClick={() => router.push('/news')}>
             Explore our news
           </Button>
-          <Button size="lg" variant="outline" onClick={() => router.push('/contact')}>
-            Contact us
+          <Button size="lg" variant="secondary" onClick={() => router.push('/contact')}>
+            Connect with Me
           </Button>
         </div>
       </motion.div>

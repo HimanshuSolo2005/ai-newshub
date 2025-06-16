@@ -73,7 +73,7 @@ export default function ContactPage() {
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
-      toast.success("Thank you for your message! We'll be in touch soon.", {
+      toast.success("Thank you for your message! I'll be in touch soon.", {
         icon: <CheckCircle className="h-5 w-5 text-green-500" />,
       });
       
@@ -96,17 +96,17 @@ export default function ContactPage() {
   const contactInfo = [
     {
       title: "Email Us",
-      detail: "hello@ainewshub.com",
+      detail: "himanshu@newzyworld.com",
       icon: <Mail className="h-6 w-6 text-primary" />
     },
     {
       title: "Call Us",
-      detail: "+1 (555) 123-4567",
+      detail: "+91 9999999999",
       icon: <Phone className="h-6 w-6 text-primary" />
     },
     {
       title: "Location",
-      detail: "123 Tech Avenue, San Francisco, CA 94107",
+      detail: "Haryana",
       icon: <MapPin className="h-6 w-6 text-primary" />
     }
   ];
@@ -118,8 +118,8 @@ export default function ContactPage() {
       icon: <UserPlus className="h-5 w-5 text-blue-500" />
     },
     {
-      question: "Is AI News Hub free to use?",
-      answer: "Yes, AI News Hub is currently free for all users. We may introduce premium features in the future, but our core news service will always be accessible at no cost.",
+      question: "Is Newzy World free to use?",
+      answer: "Yes, Newzy World is currently free for all users.",
       icon: <DollarSign className="h-5 w-5 text-green-500" />
     },
     {
@@ -129,7 +129,7 @@ export default function ContactPage() {
     },
     {
       question: "Can I suggest a news source?",
-      answer: "Absolutely! We're always looking to expand our sources. Send us your suggestions through this contact form or email us directly.",
+      answer: "Absolutely! I am always looking to expand my sources. Send me your suggestions through this contact form or email me directly.",
       icon: <Lightbulb className="h-5 w-5 text-amber-500" />
     }
   ];
@@ -142,11 +142,10 @@ export default function ContactPage() {
         animate="visible"
         variants={fadeIn}
       >
-        <Badge className="mb-4 px-3 py-1 bg-primary/10 text-primary border-primary/20">Contact Us</Badge>
+        <Badge className="mb-4 px-3 py-1 bg-primary/10 text-primary border-primary/20 hover:bg-purple-300 cursor-default">Contact Us</Badge>
         <h1 className="text-4xl font-bold mb-6">Get in Touch</h1>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          Have questions, feedback, or just want to say hello? We'd love to hear from you.
-          Our team is here to help and respond to all inquiries.
+          Have questions, feedback, or just want to say Hello? I would love to hear from you.
         </p>
       </motion.div>
       
@@ -159,9 +158,9 @@ export default function ContactPage() {
         >
           <Card>
             <CardHeader>
-              <CardTitle>Send Us a Message</CardTitle>
+              <CardTitle>Send Me a Message</CardTitle>
               <CardDescription>
-                Fill out the form below and we'll get back to you as soon as possible.
+                Fill out the form below and I'll get back to you as soon as possible.
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -169,27 +168,27 @@ export default function ContactPage() {
                 <TabsList className="grid w-full grid-cols-3">
                   <TabsTrigger value="contact">
                     <MessageSquare className="h-4 w-4 mr-2" />
-                    General
+                    General Talks!!🗣️
                   </TabsTrigger>
                   <TabsTrigger value="business">
                     <Briefcase className="h-4 w-4 mr-2" />
-                    Business
+                    Business Talks!!💵
                   </TabsTrigger>
                   <TabsTrigger value="support">
                     <HelpCircle className="h-4 w-4 mr-2" />
-                    Support
+                    Support!!💁‍♂️
                   </TabsTrigger>
                 </TabsList>
                 
                 <TabsContent value="contact" className="pt-4">
                   <p className="text-sm text-muted-foreground mb-6">
-                    Have a question or comment? We'd love to hear from you.
+                    Have a question or comment? I would love to hear from you.
                   </p>
                 </TabsContent>
                 
                 <TabsContent value="business" className="pt-4">
                   <p className="text-sm text-muted-foreground mb-6">
-                    Interested in partnering with us or exploring business opportunities?
+                    Interested in partnering with Me or exploring business opportunities?
                   </p>
                 </TabsContent>
                 
@@ -203,11 +202,11 @@ export default function ContactPage() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Your Name</Label>
+                    <Label htmlFor="name">Your Name(Aapka Naam)</Label>
                     <Input 
                       id="name" 
                       name="name" 
-                      placeholder="John Doe" 
+                      placeholder="HimSolo" 
                       required 
                       value={formState.name}
                       onChange={handleChange}
@@ -219,7 +218,7 @@ export default function ContactPage() {
                       id="email" 
                       name="email" 
                       type="email" 
-                      placeholder="john@example.com" 
+                      placeholder="himsolo@xyz.com" 
                       required 
                       value={formState.email}
                       onChange={handleChange}
@@ -232,7 +231,7 @@ export default function ContactPage() {
                   <Input 
                     id="subject" 
                     name="subject" 
-                    placeholder="How can we help you?" 
+                    placeholder="How can I help you?" 
                     required 
                     value={formState.subject}
                     onChange={handleChange}
@@ -262,7 +261,7 @@ export default function ContactPage() {
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="message">Your Message</Label>
+                  <Label htmlFor="message">Your Message(Aapka Message 😊")</Label>
                   <Textarea 
                     id="message" 
                     name="message" 
@@ -330,9 +329,7 @@ export default function ContactPage() {
               <div>
                 <h3 className="font-medium mb-3">Office Hours</h3>
                 <div className="space-y-2 text-sm text-muted-foreground">
-                  <p>Monday - Friday: 9AM - 6PM PST</p>
-                  <p>Saturday: 10AM - 4PM PST</p>
-                  <p>Sunday: Closed</p>
+                  <p>I am a student, still studying and Exploring 😅</p>
                 </div>
               </div>
               
@@ -359,11 +356,13 @@ export default function ContactPage() {
                     </svg>
                   </Button>
                   <Button variant="outline" size="icon" className="rounded-full h-10 w-10">
+                    <a href="https://www.linkedin.com/in/himanshuverma192005/" target="_blank" rel="noopener noreferrer">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
                       <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                       <rect width="4" height="12" x="2" y="9"></rect>
                       <circle cx="4" cy="4" r="2"></circle>
                     </svg>
+                    </a>
                   </Button>
                 </div>
               </div>
@@ -406,8 +405,8 @@ export default function ContactPage() {
       >
         <h2 className="text-3xl font-semibold mb-6">Join Our Growing Community</h2>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-          Connect with AI News Hub and be part of the revolution in news consumption. 
-          Follow us on social media for updates, insights, and community discussions.
+          Connect with Newzy World and be part of the revolution in news consumption. 
+          Follow Me on social media for updates, insights, and community discussions.
         </p>
         <Button size="lg" className="bg-primary hover:bg-primary/90">
           <Users className="mr-2 h-5 w-5" />
