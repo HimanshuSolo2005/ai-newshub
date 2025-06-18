@@ -72,22 +72,26 @@ interface ForecastData {
   };
 }
 
-export default function WeatherPage() {  const [cities, setCities] = useState<WeatherData[]>([]);
+export default function WeatherPage() {  
+  const [cities, setCities] = useState<WeatherData[]>([]);
   const [forecasts, setForecasts] = useState<{ [key: string]: ForecastData[] }>({});
   const [newCity, setNewCity] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [selectedCity, setSelectedCity] = useState<string | null>(null);  const [searchResults, setSearchResults] = useState<WeatherData | null>(null);
+  const [selectedCity, setSelectedCity] = useState<string | null>(null);  
+  const [searchResults, setSearchResults] = useState<WeatherData | null>(null);
   const [airQuality, setAirQuality] = useState<any>(null);
   const [searchHistory, setSearchHistory] = useState<string[]>([]);
   const [uvIndex, setUvIndex] = useState<any>(null);
   const [alerts, setAlerts] = useState<any[]>([]);
   const [hourlyForecast, setHourlyForecast] = useState<any[]>([]);
-  const [mapView, setMapView] = useState<boolean>(false);  const fetchWeatherData = async (city: string, isSearch: boolean = false) => {
+  const [mapView, setMapView] = useState<boolean>(false);  
+
+  const fetchWeatherData = async (city: string, isSearch: boolean = false) => {
     try {
       setError(null);
       setLoading(true);
-      const apiKey = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
+      const apiKey = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY;
       
       if (!apiKey) {
         throw new Error('Weather API key is not configured');
